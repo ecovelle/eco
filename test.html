@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тест открытия приложения WB</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 28px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(160deg, #481173 0%, #7b2ff7 55%, #cb11ab 100%);
+    color: #fff; min-height: 100vh;
+  }
+  h1 { font-size: 19px; margin: 0 0 6px; }
+  p  { font-size: 14px; opacity: 0.9; margin: 0 0 22px; line-height: 1.5; }
+  a.t {
+    display: block; text-decoration: none; text-align: center;
+    background: #fff; color: #7b2ff7;
+    font-size: 16px; font-weight: 700;
+    padding: 16px; border-radius: 14px; margin-bottom: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+  .n { font-size: 12px; opacity: 0.75; margin: -8px 0 16px; text-align: center; }
+</style>
+</head>
+<body>
+  <h1>Тест: какой вариант открывает приложение WB?</h1>
+  <p>Нажимай кнопки по очереди. Запомни, после какой из них открылось ПРИЛОЖЕНИЕ Wildberries (не сайт). Потом сообщи номер.</p>
+
+  <a class="t" href="https://www.wildberries.ru/catalog/271132665/detail.aspx">Вариант 1</a>
+  <div class="n">обычная ссылка (universal link)</div>
+
+  <a class="t" href="wildberries://www.wildberries.ru/catalog/271132665/detail.aspx">Вариант 2</a>
+  <div class="n">схема wildberries:// с полным адресом</div>
+
+  <a class="t" href="wildberries://catalog/271132665/detail.aspx">Вариант 3</a>
+  <div class="n">схема wildberries:// с коротким путём</div>
+
+  <a class="t" href="x-safari-https://www.wildberries.ru/catalog/271132665/detail.aspx">Вариант 4</a>
+  <div class="n">прыжок в Safari (x-safari)</div>
+</body>
+</html>
