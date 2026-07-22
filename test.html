@@ -70,7 +70,7 @@
     <h1 id="title">Открываем товар…</h1>
     <p id="subtitle">Секунду — переносим тебя в приложение Wildberries.</p>
     <a class="btn" id="manualBtn" href="#">Открыть товар</a>
-    <div class="hint" id="hint">Если ничего не открылось — нажми кнопку выше.</div>
+    <div class="hint" id="hint">А если у вас нет приложения Wildberries — страница нашего товара просто откроется в браузере.</div>
   </div>
 
 <script>
@@ -121,11 +121,7 @@
       subtitle.textContent = "Нажми кнопку — откроется приложение Wildberries с товаром.";
       btn.textContent = "Открыть в приложении WB";
       btn.classList.add("pulse");
-      if (isInstagram) {
-        hint.innerHTML = "Не сработало? Нажми <b>&#8942;</b> вверху справа &rarr; «Открыть в Chrome» и попробуй ещё раз.";
-      } else {
-        hint.textContent = "Если приложение не установлено — товар откроется на сайте.";
-      }
+      hint.textContent = "А если у вас нет приложения Wildberries — страница нашего товара просто откроется в браузере.";
     }, 1300);
 
   } else if (isIOS) {
@@ -137,11 +133,7 @@
     subtitle.textContent = "Нажми кнопку — откроется приложение Wildberries с товаром.";
     btn.textContent = "Открыть в приложении WB";
     btn.classList.add("pulse");
-    if (isInstagram) {
-      hint.innerHTML = "Если открылся сайт, а не приложение: нажми <b>&#8943;</b> вверху справа &rarr; «Открыть во внешнем браузере», затем кнопку ещё раз.";
-    } else {
-      hint.textContent = "Если приложение не установлено — товар откроется на сайте.";
-    }
+    hint.textContent = "А если у вас нет приложения Wildberries — страница нашего товара просто откроется в браузере.";
 
   } else {
     // Компьютер: просто открываем сайт
