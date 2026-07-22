@@ -109,11 +109,13 @@
   initMetrika();
 
   if (isAndroid) {
-    // Android: пробуем авто-переход (в части браузеров срабатывает),
-    // но браузеры часто блокируют прыжок в приложение без нажатия человека.
-    // Поэтому через секунду показываем большую кнопку — нажатие на неё
-    // браузер пропускает всегда.
-    setTimeout(function () { window.location.href = androidIntent; }, 300);
+    // Android: в обычных браузерах пробуем авто-переход в приложение.
+    // Внутри Instagram авто-попытку не делаем — на телефонах без приложения
+    // она вызывает плашку «Невозможно загрузить Страницу».
+    if (!isInstagram) {
+      setTimeout(function () { window.location.href = androidIntent; }, 300);
+    }
+    // Показываем кнопку (в Instagram — почти сразу)
     setTimeout(function () {
       if (document.hidden) return; // приложение уже открылось — ничего не меняем
       spinner.style.display = "none";
@@ -122,7 +124,15 @@
       btn.textContent = "Открыть в приложении WB";
       btn.classList.add("pulse");
       hint.textContent = "А если у вас нет приложения Wildberries — страница нашего товара просто откроется в браузере.";
-    }, 1300);
+    }, isInstagram ? 400 : 1300);
+
+    // Страховка для нажатия кнопки: если через 1.7 сек приложение так и
+    // не открылось (его нет на телефоне) — переводим человека на сайт.
+    btn.addEventListener("click", function () {
+      setTimeout(function () {
+        if (!document.hidden) window.location.href = WB_URL;
+      }, 1700);
+    });
 
   } else if (isIOS) {
     // iOS: приложение открывается ТОЛЬКО по нажатию человека (правило Apple).
