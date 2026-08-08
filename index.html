@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Переходим на Wildberries…</title>
+<title>Ecovelle на Ozon</title>
 
 <!-- ============================================================
      НАСТРОЙКИ — здесь можно менять товар и счётчик Метрики
      ============================================================ -->
 <script>
-  // 1) Ссылка на ТВОЙ товар на Wildberries (можно поменять на любой другой)
-  var WB_URL = "https://ozon.kz/product/ecovelle-prokladki-zhenskie-10-sht-5358370989/?at=PjtJwnMEQc8Xr0LQCnEVPEpuWoplELcj6rX8qsK1KgGy&sh=Ntw4W_xCoQ";
+  // 1) Ссылка на ТВОЙ товар на Ozon (можно поменять на любой другой)
+  var OZON_URL = "https://ozon.kz/product/ecovelle-prokladki-zhenskie-10-sht-5358370989/?at=PjtJwnMEQc8Xr0LQCnEVPEpuWoplELcj6rX8qsK1KgGy&sh=Ntw4W_xCoQ";
 
-  // 2) Номер счётчика Яндекс.Метрики.
-  //    Пока стоит 0 — счётчик выключен. Впиши сюда свой номер (например 98765432),
-  //    и статистика кликов начнёт собираться.
+  // 2) Название товара, которое видно на странице (можно поменять)
+  var PRODUCT_NAME = "Ecovelle — прокладки женские, 10 шт";
+
+  // 3) Номер счётчика Яндекс.Метрики (0 = выключен)
   var METRIKA_ID = 0;
 </script>
 <!-- ============================================================ -->
@@ -24,53 +25,68 @@
   html, body {
     margin: 0; padding: 0; height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(160deg, #481173 0%, #7b2ff7 55%, #cb11ab 100%);
-    color: #fff;
+    background: linear-gradient(165deg, #00246b 0%, #0041c8 45%, #005bff 75%, #35a1ff 100%);
   }
   .wrap {
     min-height: 100%;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
-    text-align: center; padding: 24px;
+    padding: 24px;
+  }
+  .card {
+    background: #fff; border-radius: 24px;
+    padding: 34px 26px 28px;
+    max-width: 380px; width: 100%;
+    text-align: center;
+    box-shadow: 0 18px 50px rgba(0, 20, 80, 0.35);
   }
   .logo {
-    font-size: 22px; font-weight: 800; letter-spacing: 0.5px;
-    margin-bottom: 26px; opacity: 0.95;
+    font-size: 30px; font-weight: 900; letter-spacing: 1px;
+    color: #005bff; margin-bottom: 4px;
+  }
+  .product {
+    font-size: 13px; color: #8a94a6;
+    margin-bottom: 24px; line-height: 1.4;
   }
   .spinner {
-    width: 54px; height: 54px; margin: 0 auto 26px;
-    border: 4px solid rgba(255,255,255,0.28);
-    border-top-color: #fff; border-radius: 50%;
+    width: 48px; height: 48px; margin: 0 auto 22px;
+    border: 4px solid #e3ecff;
+    border-top-color: #005bff; border-radius: 50%;
     animation: spin 0.8s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-  h1 { font-size: 20px; font-weight: 700; margin: 0 0 10px; }
-  p  { font-size: 15px; line-height: 1.5; opacity: 0.9; margin: 0 0 26px; max-width: 340px; }
+  h1 { font-size: 20px; font-weight: 800; color: #001a34; margin: 0 0 8px; }
+  p  { font-size: 14.5px; line-height: 1.5; color: #4d5a6e; margin: 0 0 22px; }
   .btn {
-    display: inline-block; text-decoration: none;
-    background: #fff; color: #7b2ff7;
+    display: block; text-decoration: none;
+    background: #005bff; color: #fff;
     font-size: 17px; font-weight: 800;
-    padding: 17px 34px; border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    padding: 17px 20px; border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(0, 91, 255, 0.35);
     transition: transform 0.1s ease;
   }
   .btn:active { transform: scale(0.97); }
-  .hint { margin-top: 22px; font-size: 12.5px; opacity: 0.8; max-width: 320px; line-height: 1.5; }
+  .hint {
+    margin-top: 18px; font-size: 12.5px; color: #8a94a6; line-height: 1.5;
+  }
   .pulse { animation: pulse 1.4s ease-in-out infinite; }
   @keyframes pulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    50% { transform: scale(1.04); }
   }
 </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="logo">Wildberries</div>
-    <div class="spinner" id="spinner"></div>
-    <h1 id="title">Открываем товар…</h1>
-    <p id="subtitle">Секунду — переносим тебя в приложение Wildberries.</p>
-    <a class="btn" id="manualBtn" href="#">Открыть товар</a>
-    <div class="hint" id="hint">А если у вас нет приложения Wildberries — страница нашего товара просто откроется в браузере.</div>
+    <div class="card">
+      <div class="logo">OZON</div>
+      <div class="product" id="product"></div>
+      <div class="spinner" id="spinner"></div>
+      <h1 id="title">Открываем товар…</h1>
+      <p id="subtitle">Секунду — переносим вас в приложение Ozon.</p>
+      <a class="btn" id="manualBtn" href="#">Открыть товар</a>
+      <div class="hint" id="hint">А если у вас нет приложения Ozon — страница нашего товара просто откроется в браузере.</div>
+    </div>
   </div>
 
 <script>
@@ -80,22 +96,23 @@
   var isIOS = /iphone|ipad|ipod/i.test(ua) || (/Macintosh/i.test(ua) && 'ontouchend' in document);
   var isInstagram = /instagram/i.test(ua);
 
-  var path = WB_URL.replace(/^https?:\/\//, "");
+  document.getElementById("product").textContent = PRODUCT_NAME;
 
-  // Android: intent:// принудительно открывает приложение Wildberries,
-  // даже из встроенного браузера Instagram. Нет приложения — откроется сайт.
+  var path = OZON_URL.replace(/^https?:\/\//, "");
+
+  // Android: intent:// принудительно открывает приложение Ozon.
+  // Нет приложения — откроется сайт (browser_fallback_url).
   var androidIntent =
-    "intent://" + path +
-    "#Intent;scheme=https;package=com.wildberries.ru;" +
-    "S.browser_fallback_url=" + encodeURIComponent(WB_URL) + ";end";
+    "intent://" + path.split("#")[0] +
+    "#Intent;scheme=https;package=ru.ozon.app.android;" +
+    "S.browser_fallback_url=" + encodeURIComponent(OZON_URL) + ";end";
 
   var btn = document.getElementById("manualBtn");
   var title = document.getElementById("title");
   var subtitle = document.getElementById("subtitle");
-  var hint = document.getElementById("hint");
   var spinner = document.getElementById("spinner");
 
-  btn.setAttribute("href", isAndroid ? androidIntent : WB_URL);
+  btn.setAttribute("href", isAndroid ? androidIntent : OZON_URL);
 
   // --- Яндекс.Метрика (работает, только если вписан METRIKA_ID) ---
   function initMetrika() {
@@ -104,50 +121,42 @@
     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
     ym(METRIKA_ID, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
-    try { ym(METRIKA_ID, "reachGoal", "wb_click"); } catch(e){}
+    try { ym(METRIKA_ID, "reachGoal", "ozon_click"); } catch(e){}
   }
   initMetrika();
 
+  function showButton() {
+    if (document.hidden) return; // приложение уже открылось
+    spinner.style.display = "none";
+    title.textContent = "Товар ждёт вас!";
+    subtitle.textContent = "Нажмите кнопку — откроется приложение Ozon с товаром.";
+    btn.textContent = "Открыть в приложении Ozon";
+    btn.classList.add("pulse");
+  }
+
   if (isAndroid) {
-    // Android: в обычных браузерах пробуем авто-переход в приложение.
-    // Внутри Instagram авто-попытку не делаем — на телефонах без приложения
-    // она вызывает плашку «Невозможно загрузить Страницу».
+    // В обычных браузерах пробуем авто-переход; внутри Instagram — нет
+    // (на телефонах без приложения это даёт плашку об ошибке).
     if (!isInstagram) {
       setTimeout(function () { window.location.href = androidIntent; }, 300);
     }
-    // Показываем кнопку (в Instagram — почти сразу)
-    setTimeout(function () {
-      if (document.hidden) return; // приложение уже открылось — ничего не меняем
-      spinner.style.display = "none";
-      title.textContent = "Товар ждёт тебя!";
-      subtitle.textContent = "Нажми кнопку — откроется приложение Wildberries с товаром.";
-      btn.textContent = "Открыть в приложении WB";
-      btn.classList.add("pulse");
-      hint.textContent = "А если у вас нет приложения Wildberries — страница нашего товара просто откроется в браузере.";
-    }, isInstagram ? 400 : 1300);
+    setTimeout(showButton, isInstagram ? 400 : 1300);
 
-    // Страховка для нажатия кнопки: если через 1.7 сек приложение так и
-    // не открылось (его нет на телефоне) — переводим человека на сайт.
+    // Страховка: если через 1.7 сек после нажатия приложение не открылось —
+    // переводим человека на сайт.
     btn.addEventListener("click", function () {
       setTimeout(function () {
-        if (!document.hidden) window.location.href = WB_URL;
+        if (!document.hidden) window.location.href = OZON_URL;
       }, 1700);
     });
 
   } else if (isIOS) {
-    // iOS: приложение открывается ТОЛЬКО по нажатию человека (правило Apple).
-    // Поэтому не делаем авто-редирект на сайт, а показываем большую кнопку —
-    // её нажатие запускает universal link, и iOS открывает приложение WB.
-    spinner.style.display = "none";
-    title.textContent = "Товар ждёт тебя!";
-    subtitle.textContent = "Нажми кнопку — откроется приложение Wildberries с товаром.";
-    btn.textContent = "Открыть в приложении WB";
-    btn.classList.add("pulse");
-    hint.textContent = "А если у вас нет приложения Wildberries — страница нашего товара просто откроется в браузере.";
+    // iOS: приложение открывается только по нажатию человека (правило Apple)
+    showButton();
 
   } else {
     // Компьютер: просто открываем сайт
-    setTimeout(function () { window.location.href = WB_URL; }, 400);
+    setTimeout(function () { window.location.href = OZON_URL; }, 400);
   }
 })();
 </script>
