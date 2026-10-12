@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f14635">
+  <meta name="description" content="Гигиенические прокладки Ecovelle в Магазине на Kaspi.kz. Откройте каталог и выберите свой набор.">
+  <meta property="og:title" content="Ecovelle на Kaspi.kz">
+  <meta property="og:description" content="Наши товары в Магазине на Kaspi.kz">
+  <meta property="og:type" content="website">
+  <title>Ecovelle на Kaspi.kz</title>
+  <style>
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; min-height: 100%; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: linear-gradient(165deg, #9d211a 0%, #e33c2c 48%, #ff7456 100%); color: #382623; }
+    .wrap { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .card { width: 100%; max-width: 380px; padding: 34px 26px 28px; border-radius: 24px; background: white; text-align: center; box-shadow: 0 18px 50px #74180f55; }
+    .brand { margin: 0 0 6px; font-size: 28px; font-weight: 900; color: #ee4130; letter-spacing: -.7px; }
+    .product { font-size: 14px; color: #786864; margin: 0 0 24px; line-height: 1.5; }
+    .spinner { display: none; width: 48px; height: 48px; margin: 0 auto 22px; border: 4px solid #ffe9e5; border-top-color: #ee4130; border-radius: 50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    h1 { font-size: 22px; font-weight: 800; line-height: 1.25; margin: 0 0 10px; }
+    .subtitle { font-size: 15px; line-height: 1.55; color: #70615c; margin: 0 0 24px; }
+    .btn { display: block; padding: 17px 16px; border-radius: 16px; background: linear-gradient(90deg, #eb3529, #fa5a3e); color: white; font-size: 17px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 22px #eb352933; }
+    .btn:active { transform: scale(.98); }
+    a:focus-visible, summary:focus-visible { outline: 3px solid #a92117; outline-offset: 5px; }
+    .web { display: inline-block; margin-top: 20px; padding: 4px; color: #aa3025; font-size: 14px; text-underline-offset: 3px; }
+    .hint { margin: 16px 0 0; font-size: 12.5px; color: #786864; line-height: 1.55; }
+    details { margin-top: 18px; text-align: left; font-size: 13px; line-height: 1.6; color: #70615c; }
+    summary { cursor: pointer; color: #aa3025; }
+    details p { margin: 10px 0 0; }
+    @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } .btn:active { transform: none; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-labelledby="title">
+      <p class="brand">Kaspi.kz</p>
+      <p class="product">Гигиенические прокладки Ecovelle</p>
+      <div class="spinner" id="spinner" aria-hidden="true"></div>
+      <h1 id="title">Ecovelle на Kaspi</h1>
+      <p class="subtitle" id="subtitle" aria-live="polite">Нажмите кнопку, чтобы открыть наши товары в Магазине на Kaspi.kz.</p>
+      <a class="btn" id="openBtn" href="https://kaspi.kz/shop/search/?text=ecovelle&amp;q=%3AavailableInZones%3AMagnum_ZONE1%3Acategory%3ASanitary%20napkins%3AmanufacturerName%3AEcovelle&amp;sort=relevance&amp;filteredByCategory=false&amp;sc=">Открыть товары на Kaspi</a>
+      <a class="web" id="webBtn" href="https://kaspi.kz/shop/search/?text=ecovelle&amp;q=%3AavailableInZones%3AMagnum_ZONE1%3Acategory%3ASanitary%20napkins%3AmanufacturerName%3AEcovelle&amp;sort=relevance&amp;filteredByCategory=false&amp;sc=">Перейти на сайт Kaspi</a>
+      <p class="hint">Если приложение не откроется, воспользуйтесь ссылкой на сайт.</p>
+      <details id="help">
+        <summary>Не получается открыть приложение?</summary>
+        <p>Если вы перешли из Instagram или другой соцсети, выберите в меню браузера «Открыть в Safari» или «Открыть в Chrome», затем нажмите кнопку ещё раз.</p>
+      </details>
+    </section>
+  </main>
+  <script>
+    (function () {
+      "use strict";
+      // Исходная ссылка: фильтры бренда, категории и зоны сохранены полностью.
+      var KASPI_URL = "https://kaspi.kz/shop/search/?text=ecovelle&q=%3AavailableInZones%3AMagnum_ZONE1%3Acategory%3ASanitary%20napkins%3AmanufacturerName%3AEcovelle&sort=relevance&filteredByCategory=false&sc=";
+      var ua = navigator.userAgent || "";
+      var isAndroid = /android/i.test(ua);
+      var isIOS = /iphone|ipad|ipod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+      var isMobile = isAndroid || isIOS || /mobile/i.test(ua);
+      var btn = document.getElementById("openBtn");
+      var spinner = document.getElementById("spinner");
+      var title = document.getElementById("title");
+      var subtitle = document.getElementById("subtitle");
+      var fallbackTimer;
+
+      // HTTPS-переход на iOS: решение об открытии приложения принимает система.
+      // Android Intent вызывается по нажатию, чтобы сохранить пользовательский жест.
+      var androidIntent = "intent://" + KASPI_URL.replace(/^https:\/\//, "") +
+        "#Intent;scheme=https;package=kz.kaspi.mobile;" +
+        "S.browser_fallback_url=" + encodeURIComponent(KASPI_URL) + ";end";
+      btn.href = isAndroid ? androidIntent : KASPI_URL;
+
+      function cancelFallback() { clearTimeout(fallbackTimer); }
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) cancelFallback();
+      });
+      window.addEventListener("pagehide", cancelFallback);
+      document.getElementById("webBtn").addEventListener("click", cancelFallback);
+
+      if (isMobile) {
+        subtitle.textContent = "Нажмите кнопку — попробуем открыть каталог Ecovelle в приложении Kaspi.kz.";
+        btn.addEventListener("click", function () {
+          if (!isAndroid) return;
+          cancelFallback();
+          // Запасной HTTPS-переход для встроенных браузеров без поддержки Intent.
+          fallbackTimer = setTimeout(function () {
+            if (!document.hidden) window.location.replace(KASPI_URL);
+          }, 2500);
+        });
+      } else {
+        spinner.style.display = "block";
+        title.textContent = "Открываем каталог…";
+        subtitle.textContent = "Сейчас откроются товары Ecovelle на сайте Kaspi.kz.";
+        document.getElementById("help").hidden = true;
+        setTimeout(function () { window.location.replace(KASPI_URL); }, 650);
+      }
+    })();
+  </script>
+</body>
+</html>
