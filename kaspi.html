@@ -1,100 +1,97 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f14635">
-  <meta name="description" content="Гигиенические прокладки Ecovelle в Магазине на Kaspi.kz. Откройте каталог и выберите свой набор.">
-  <meta property="og:title" content="Ecovelle на Kaspi.kz">
-  <meta property="og:description" content="Наши товары в Магазине на Kaspi.kz">
+  <meta name="theme-color" content="#edf2e8">
+  <title>Ecovelle на Kaspi — выберите свой набор</title>
+  <meta name="description" content="Товары Ecovelle на Kaspi: дневные, ночные, ежедневные прокладки и набор 78 шт. Прямые ссылки на карточки товаров.">
+  <meta property="og:title" content="Ecovelle на Kaspi">
+  <meta property="og:description" content="Выберите свой набор и откройте его карточку на Kaspi.">
   <meta property="og:type" content="website">
-  <title>Ecovelle на Kaspi.kz</title>
+  <meta property="og:url" content="https://ecovelle.github.io/eco/kaspi.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233b533b'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia' font-size='48' fill='%23f5f5ea'%3Ee%3C/text%3E%3C/svg%3E">
   <style>
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html, body { margin: 0; min-height: 100%; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: linear-gradient(165deg, #9d211a 0%, #e33c2c 48%, #ff7456 100%); color: #382623; }
-    .wrap { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding: 24px; }
-    .card { width: 100%; max-width: 380px; padding: 34px 26px 28px; border-radius: 24px; background: white; text-align: center; box-shadow: 0 18px 50px #74180f55; }
-    .brand { margin: 0 0 6px; font-size: 28px; font-weight: 900; color: #ee4130; letter-spacing: -.7px; }
-    .product { font-size: 14px; color: #786864; margin: 0 0 24px; line-height: 1.5; }
-    .spinner { display: none; width: 48px; height: 48px; margin: 0 auto 22px; border: 4px solid #ffe9e5; border-top-color: #ee4130; border-radius: 50%; animation: spin .8s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    h1 { font-size: 22px; font-weight: 800; line-height: 1.25; margin: 0 0 10px; }
-    .subtitle { font-size: 15px; line-height: 1.55; color: #70615c; margin: 0 0 24px; }
-    .btn { display: block; padding: 17px 16px; border-radius: 16px; background: linear-gradient(90deg, #eb3529, #fa5a3e); color: white; font-size: 17px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 22px #eb352933; }
-    .btn:active { transform: scale(.98); }
-    a:focus-visible, summary:focus-visible { outline: 3px solid #a92117; outline-offset: 5px; }
-    .web { display: inline-block; margin-top: 20px; padding: 4px; color: #aa3025; font-size: 14px; text-underline-offset: 3px; }
-    .hint { margin: 16px 0 0; font-size: 12.5px; color: #786864; line-height: 1.55; }
-    details { margin-top: 18px; text-align: left; font-size: 13px; line-height: 1.6; color: #70615c; }
-    summary { cursor: pointer; color: #aa3025; }
-    details p { margin: 10px 0 0; }
-    @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } .btn:active { transform: none; } }
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #2e402e; background: #edf2e8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 280px; background: radial-gradient(ellipse at 15% 0%, #dde7d2, transparent 55%), radial-gradient(ellipse at 100% 100%, #e4dfd2, transparent 55%), #edf2e8; }
+    main { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: 28px 18px; }
+    .card { width: 100%; max-width: 470px; padding: 30px 24px 24px; border: 1px solid #ffffffcc; border-radius: 30px; background: #fffef9; box-shadow: 0 24px 80px #30452b12; }
+    header { text-align: center; }
+    .brand { margin: 0; font: normal 48px/1 Georgia, "Times New Roman", serif; letter-spacing: -2.5px; color: #3b533b; }
+    .market { display: inline-block; margin-top: 16px; padding: 6px 11px; border-radius: 20px; background: #fde9e4; color: #b82a1f; font-size: 12px; font-weight: 700; }
+    h1 { margin: 17px 0 8px; font: normal 28px/1.2 Georgia, "Times New Roman", serif; text-wrap: balance; letter-spacing: -.5px; }
+    .intro { margin: 0 0 23px; font-size: 13px; line-height: 1.55; color: #73796b; }
+    nav { display: grid; gap: 11px; }
+    .product { display: flex; gap: 15px; align-items: center; min-height: 110px; padding: 12px; border: 1px solid #e3e7dc; border-radius: 17px; background: white; color: inherit; text-decoration: none; transition: border-color .15s ease, transform .15s ease; -webkit-tap-highlight-color: transparent; }
+    .product:hover { border-color: #9eae8f; transform: translateY(-1px); }
+    .product:active { transform: scale(.99); }
+    a:focus-visible, summary:focus-visible { outline: 3px solid #3b533b; outline-offset: 4px; }
+    .product img { width: 70px; height: 88px; object-fit: contain; border-radius: 7px; flex-shrink: 0; background: #f5f6f2; }
+    .info { flex: 1; min-width: 0; }
+    .name { display: block; font-size: 15px; font-weight: 700; line-height: 1.3; }
+    .size { display: block; margin-top: 4px; font-size: 13px; color: #73796b; }
+    .action { display: inline-flex; gap: 9px; align-items: center; margin-top: 9px; color: #c93023; font-size: 12px; font-weight: 700; }
+    .action svg { width: 15px; height: 15px; }
+    .footer { text-align: center; margin-top: 21px; font-size: 12px; line-height: 1.65; color: #73796b; }
+    .back { display: inline-block; padding: 5px; color: #3b533b; text-underline-offset: 3px; }
+    .footer p { margin: 9px 0 0; }
+    details { margin-top: 14px; }
+    summary { cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+    @media (max-width: 360px) { main { padding: 18px 12px; } .card { padding: 24px 18px 20px; } h1 { font-size: 25px; } .product { gap: 11px; } .product img { width: 60px; height: 78px; } }
+    @media (prefers-reduced-motion: reduce) { .product { transition: none; } .product:hover, .product:active { transform: none; } }
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <main>
     <section class="card" aria-labelledby="title">
-      <p class="brand">Kaspi.kz</p>
-      <p class="product">Гигиенические прокладки Ecovelle</p>
-      <div class="spinner" id="spinner" aria-hidden="true"></div>
-      <h1 id="title">Ecovelle на Kaspi</h1>
-      <p class="subtitle" id="subtitle" aria-live="polite">Нажмите кнопку, чтобы открыть наши товары в Магазине на Kaspi.kz.</p>
-      <a class="btn" id="openBtn" href="https://kaspi.kz/shop/search/?text=ecovelle&amp;q=%3AavailableInZones%3AMagnum_ZONE1%3Acategory%3ASanitary%20napkins%3AmanufacturerName%3AEcovelle&amp;sort=relevance&amp;filteredByCategory=false&amp;sc=">Открыть товары на Kaspi</a>
-      <a class="web" id="webBtn" href="https://kaspi.kz/shop/search/?text=ecovelle&amp;q=%3AavailableInZones%3AMagnum_ZONE1%3Acategory%3ASanitary%20napkins%3AmanufacturerName%3AEcovelle&amp;sort=relevance&amp;filteredByCategory=false&amp;sc=">Перейти на сайт Kaspi</a>
-      <p class="hint">Если приложение не откроется, воспользуйтесь ссылкой на сайт.</p>
-      <details id="help">
-        <summary>Не получается открыть приложение?</summary>
-        <p>Если вы перешли из Instagram или другой соцсети, выберите в меню браузера «Открыть в Safari» или «Открыть в Chrome», затем нажмите кнопку ещё раз.</p>
-      </details>
+      <header>
+        <p class="brand" aria-label="Ecovelle">ecovelle</p>
+        <span class="market">Наши товары на Kaspi.kz</span>
+        <h1 id="title">Выберите свой набор</h1>
+        <p class="intro">Нажмите на товар, чтобы открыть<br>его карточку на Kaspi.</p>
+      </header>
+      <nav aria-label="Товары Ecovelle на Kaspi">
+        <!-- Прямые карточки: без поискового запроса и фиксированного города. -->
+        <a class="product" data-package="kz.kaspi.mobile" href="https://kaspi.kz/shop/p/ecovelle-prokladki-2041467657244-78-sht-178989394/" aria-label="Набор прокладок Ecovelle, 78 шт. Открыть на Kaspi">
+          <img src="https://resources.cdn-kaspi.kz/img/m/p/p4c/p13/193615793.?format=preview-large" alt="" width="70" height="88" decoding="async">
+          <span class="info"><span class="name">Набор прокладок</span><span class="size">78 шт.</span><span class="action">Открыть на Kaspi <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </a>
+        <a class="product" data-package="kz.kaspi.mobile" href="https://kaspi.kz/shop/p/ecovelle-prokladki-2041088604856-30-sht-178989399/" aria-label="Дневные прокладки Ecovelle, 30 шт. Открыть на Kaspi">
+          <img src="https://resources.cdn-kaspi.kz/img/m/p/p9e/p13/193612919.?format=preview-large" alt="" width="70" height="88" decoding="async">
+          <span class="info"><span class="name">Дневные прокладки</span><span class="size">30 шт.</span><span class="action">Открыть на Kaspi <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </a>
+        <a class="product" data-package="kz.kaspi.mobile" href="https://kaspi.kz/shop/p/ecovelle-prokladki-2041442642142-24-sht-178989396/" aria-label="Ночные прокладки Ecovelle, 24 шт. Открыть на Kaspi">
+          <img src="https://resources.cdn-kaspi.kz/img/m/p/p89/p13/193613185.?format=preview-large" alt="" width="70" height="88" decoding="async">
+          <span class="info"><span class="name">Ночные прокладки</span><span class="size">24 шт.</span><span class="action">Открыть на Kaspi <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </a>
+        <a class="product" data-package="kz.kaspi.mobile" href="https://kaspi.kz/shop/p/ecovelle-prokladki-ezhednevnye-2041319198925-40-sht-178989393/" aria-label="Ежедневные прокладки Ecovelle, 40 шт. Открыть на Kaspi">
+          <img src="https://resources.cdn-kaspi.kz/img/m/p/p87/p13/193613403.?format=preview-large" alt="" width="70" height="88" decoding="async">
+          <span class="info"><span class="name">Ежедневные прокладки</span><span class="size">40 шт.</span><span class="action">Открыть на Kaspi <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </a>
+      </nav>
+      <footer class="footer">
+        <a class="back" href="shop.html">← Выбрать другой магазин</a>
+        <p>Актуальные цены и наличие —<br>в карточке товара на Kaspi.</p>
+        <details><summary>Если товар не открывается</summary><p>Откройте эту страницу в Safari или Chrome через меню браузера соцсети и нажмите на товар ещё раз.</p></details>
+      </footer>
     </section>
   </main>
   <script>
     (function () {
       "use strict";
-      // Исходная ссылка: фильтры бренда, категории и зоны сохранены полностью.
-      var KASPI_URL = "https://kaspi.kz/shop/search/?text=ecovelle&q=%3AavailableInZones%3AMagnum_ZONE1%3Acategory%3ASanitary%20napkins%3AmanufacturerName%3AEcovelle&sort=relevance&filteredByCategory=false&sc=";
       var ua = navigator.userAgent || "";
-      var isAndroid = /android/i.test(ua);
-      var isIOS = /iphone|ipad|ipod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
-      var isMobile = isAndroid || isIOS || /mobile/i.test(ua);
-      var btn = document.getElementById("openBtn");
-      var spinner = document.getElementById("spinner");
-      var title = document.getElementById("title");
-      var subtitle = document.getElementById("subtitle");
-      var fallbackTimer;
-
-      // HTTPS-переход на iOS: решение об открытии приложения принимает система.
-      // Android Intent вызывается по нажатию, чтобы сохранить пользовательский жест.
-      var androidIntent = "intent://" + KASPI_URL.replace(/^https:\/\//, "") +
-        "#Intent;scheme=https;package=kz.kaspi.mobile;" +
-        "S.browser_fallback_url=" + encodeURIComponent(KASPI_URL) + ";end";
-      btn.href = isAndroid ? androidIntent : KASPI_URL;
-
-      function cancelFallback() { clearTimeout(fallbackTimer); }
-      document.addEventListener("visibilitychange", function () {
-        if (document.hidden) cancelFallback();
+      // По умолчанию остаются HTTPS-ссылки: они работают и без приложения.
+      // Intent с запасным HTTPS-адресом используем только в Chrome на Android.
+      var isAndroidChrome = /android/i.test(ua) && /Chrome\/\d+/i.test(ua) &&
+        !/Instagram|FBAN|FBAV|TikTok|Bytedance|MicroMessenger|; wv\)|SamsungBrowser|EdgA|OPR|YaBrowser|DuckDuckGo|Vivaldi|Brave/i.test(ua);
+      if (!isAndroidChrome) return;
+      document.querySelectorAll("a[data-package]").forEach(function (link) {
+        var destination = link.href;
+        link.href = "intent://" + destination.replace(/^https:\/\//, "") +
+          "#Intent;scheme=https;package=kz.kaspi.mobile;S.browser_fallback_url=" +
+          encodeURIComponent(destination) + ";end";
       });
-      window.addEventListener("pagehide", cancelFallback);
-      document.getElementById("webBtn").addEventListener("click", cancelFallback);
-
-      if (isMobile) {
-        subtitle.textContent = "Нажмите кнопку — попробуем открыть каталог Ecovelle в приложении Kaspi.kz.";
-        btn.addEventListener("click", function () {
-          if (!isAndroid) return;
-          cancelFallback();
-          // Запасной HTTPS-переход для встроенных браузеров без поддержки Intent.
-          fallbackTimer = setTimeout(function () {
-            if (!document.hidden) window.location.replace(KASPI_URL);
-          }, 2500);
-        });
-      } else {
-        spinner.style.display = "block";
-        title.textContent = "Открываем каталог…";
-        subtitle.textContent = "Сейчас откроются товары Ecovelle на сайте Kaspi.kz.";
-        document.getElementById("help").hidden = true;
-        setTimeout(function () { window.location.replace(KASPI_URL); }, 650);
-      }
     })();
   </script>
 </body>
