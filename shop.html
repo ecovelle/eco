@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf2e8">
+  <title>Ecovelle — выберите свой магазин</title>
+  <meta name="description" content="Купить гигиенические прокладки Ecovelle на Kaspi, Wildberries или Ozon. Выберите магазин, в котором вам удобнее.">
+  <meta property="og:title" content="Ecovelle — забота о себе каждый день">
+  <meta property="og:description" content="Выберите, где купить: Kaspi, Wildberries или Ozon.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ecovelle.github.io/eco/shop.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233b533b'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia' font-size='48' fill='%23f5f5ea'%3Ee%3C/text%3E%3C/svg%3E">
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #2e402e; background: #edf2e8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 280px; background: radial-gradient(ellipse at 15% 0%, #dde7d2 0%, transparent 55%), radial-gradient(ellipse at 100% 100%, #e4dfd2 0%, transparent 55%), #edf2e8; }
+    main { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: 36px 20px; }
+    .card { position: relative; overflow: hidden; width: 100%; max-width: 450px; padding: 38px 32px 28px; border: 1px solid #ffffffcc; border-radius: 32px; background: #fffef9; box-shadow: 0 24px 80px #30452b12; text-align: center; }
+    .leaf { width: 42px; height: 42px; margin-bottom: 8px; color: #6e855e; }
+    .brand { margin: 0; font: normal 58px/.95 Georgia, "Times New Roman", serif; letter-spacing: -3px; color: #3b533b; }
+    .tagline { margin: 13px 0 0; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #7d866d; }
+    .divider { width: 38px; height: 1px; margin: 26px auto; background: #d6ddcb; }
+    h1 { margin: 0; font: normal 29px/1.15 Georgia, "Times New Roman", serif; letter-spacing: -.6px; text-wrap: balance; }
+    .intro { margin: 14px auto 25px; max-width: 310px; font-size: 14px; line-height: 1.6; color: #73796b; text-wrap: pretty; }
+    nav { display: grid; gap: 12px; }
+    .store { display: flex; align-items: center; gap: 14px; min-height: 76px; padding: 14px 18px; border-radius: 18px; text-decoration: none; color: white; text-align: left; transition: transform .16s ease, box-shadow .16s ease; -webkit-tap-highlight-color: transparent; }
+    .store:hover { transform: translateY(-2px); box-shadow: 0 6px 16px #2635211a; }
+    .store:active { transform: scale(.98); }
+    .store:focus-visible { outline: 3px solid #304b30; outline-offset: 4px; }
+    .kaspi { background: #e53425; }
+    .wb { background: linear-gradient(110deg, #9222ca, #c311a2); }
+    .ozon { background: #0056e8; }
+    .mark { display: grid; place-items: center; flex-shrink: 0; width: 43px; height: 43px; border-radius: 13px; background: #ffffff24; font-size: 24px; font-weight: 800; letter-spacing: -1.5px; }
+    .wb .mark { font-size: 18px; letter-spacing: -.8px; }
+    .ozon .mark { font-size: 12px; letter-spacing: -.4px; }
+    .label { flex: 1; }
+    .name { display: block; font-size: 19px; font-weight: 750; line-height: 1.15; letter-spacing: -.4px; }
+    .action { display: block; margin-top: 5px; font-size: 12px; color: #ffffffed; }
+    .arrow { width: 20px; height: 20px; flex-shrink: 0; }
+    .note { margin: 22px 0 0; color: #7a8071; font-size: 12px; line-height: 1.6; }
+    details { margin-top: 16px; color: #7a8071; font-size: 12px; line-height: 1.6; }
+    summary { cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+    summary:focus-visible { outline: 2px solid #304b30; outline-offset: 4px; border-radius: 3px; }
+    details p { margin: 10px 0 0; }
+    @media (max-width: 380px) { main { padding: 20px 14px; } .card { padding: 28px 22px 24px; border-radius: 26px; } .brand { font-size: 52px; } h1 { font-size: 26px; } .store { padding: 13px 15px; } }
+    @media (prefers-reduced-motion: reduce) { .store { transition: none; } .store:hover, .store:active { transform: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card" aria-labelledby="title">
+      <header>
+        <svg class="leaf" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 40V23M24 31C12 32 8 24 9 14c10 0 16 5 15 17ZM24 24C23 12 30 6 40 7c0 10-5 17-16 17Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="m16 22 8 9m8-16-8 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <p class="brand" aria-label="Ecovelle">ecovelle</p>
+        <p class="tagline">Забота о себе каждый день</p>
+      </header>
+      <div class="divider" aria-hidden="true"></div>
+      <h1 id="title">Выберите свой<br>любимый магазин</h1>
+      <p class="intro">Гигиенические прокладки Ecovelle.<br>Покупайте там, где вам удобно.</p>
+      <nav aria-label="Где купить Ecovelle">
+        <a class="store kaspi" data-package="kz.kaspi.mobile" href="https://kaspi.kz/shop/search/?text=ecovelle&amp;q=%3AavailableInZones%3AMagnum_ZONE1%3Acategory%3ASanitary%20napkins%3AmanufacturerName%3AEcovelle&amp;sort=relevance&amp;filteredByCategory=false&amp;sc=" aria-label="Купить Ecovelle на Kaspi.kz">
+          <span class="mark" aria-hidden="true">K</span><span class="label"><span class="name">Kaspi.kz</span><span class="action">Купить на Kaspi</span></span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="store wb" data-package="com.wildberries.ru" href="https://www.wildberries.ru/catalog/271132665/detail.aspx" aria-label="Купить Ecovelle на Wildberries">
+          <span class="mark" aria-hidden="true">WB</span><span class="label"><span class="name">Wildberries</span><span class="action">Купить на Wildberries</span></span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="store ozon" data-package="ru.ozon.app.android" href="https://ozon.kz/product/ecovelle-prokladki-zhenskie-10-sht-5358370989/?at=PjtJwnMEQc8Xr0LQCnEVPEpuWoplELcj6rX8qsK1KgGy&amp;sh=Ntw4W_xCoQ" aria-label="Купить Ecovelle на Ozon">
+          <span class="mark" aria-hidden="true">OZON</span><span class="label"><span class="name">Ozon</span><span class="action">Купить на Ozon</span></span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+      <p class="note">Выбор товара, оплата и доставка —<br>в выбранном магазине.</p>
+      <details><summary>Если магазин не открывается</summary><p>Если вы перешли из соцсети, откройте эту страницу в Safari или Chrome через меню браузера. Затем выберите магазин ещё раз.</p></details>
+    </section>
+  </main>
+  <script>
+    (function () {
+      "use strict";
+      // Обычные HTTPS-ссылки работают на компьютере, iOS и без JavaScript.
+      // На Android пробуем открыть приложение по нажатию пользователя.
+      // Во встроенных браузерах соцсетей сохраняем обычную ссылку.
+      var ua = navigator.userAgent || "";
+      if (!/android/i.test(ua) || /Instagram|FBAN|FBAV|TikTok|Bytedance|MicroMessenger|; wv\)/i.test(ua)) return;
+      document.querySelectorAll("a[data-package]").forEach(function (link) {
+        var destination = link.href;
+        link.href = "intent://" + destination.replace(/^https:\/\//, "").split("#")[0] +
+          "#Intent;scheme=https;package=" + link.dataset.package +
+          ";S.browser_fallback_url=" + encodeURIComponent(destination) + ";end";
+      });
+    })();
+  </script>
+</body>
+</html>
